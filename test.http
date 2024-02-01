@@ -1,1 +1,25 @@
-GET http://127.0.0.1:3000/
+# get all users
+GET http://127.0.0.1:3000/users
+
+#######################
+# Get a user
+GET http://127.0.0.1:3000/users/10
+
+#######################
+
+POST http://127.0.0.1:3000/user
+Content-Type: application/json
+
+[
+  {
+    "id": "9",
+    "name": "Hannah",
+    "email": "hannah@example.com"
+  },
+  {
+    "id": "10",
+    "name": "Ian",
+    "email": "ian@example.com"
+  }
+]
+
