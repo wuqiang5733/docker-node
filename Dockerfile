@@ -2,7 +2,7 @@
 FROM node:alpine
 
 # Set the working directory inside the container
-WORKDIR /usr/src/app
+WORKDIR /app
 
 # Copy package.json and package-lock.json (if available) to the working directory
 COPY package*.json ./
@@ -12,6 +12,9 @@ RUN npm install
 
 # Copy the rest of the application's source code from the local directory to the working directory inside the container
 COPY . .
+
+# Document the volume for users data
+# VOLUME ["/usr/src/app/data"]
 
 # Your app binds to port 3000 so you'll use the EXPOSE instruction to have it mapped by the docker daemon
 EXPOSE 3000
